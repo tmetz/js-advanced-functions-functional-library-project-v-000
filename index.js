@@ -124,7 +124,7 @@ const fi = (function() {
       }
       else {
         for (let val of array) {
-          flat = this.flatten(val, false);
+          flat.push(this.flatten(val, false));
         }
       }
       return flat;
