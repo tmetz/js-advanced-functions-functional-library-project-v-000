@@ -47,8 +47,8 @@ const fi = (function() {
       if (!(collection instanceof Array))
         collection = Object.values(collection)
       for (var i = 0; i < collection.length; i++) {
-        if (collection[i] === predicate) {
-          return predicate;
+        if (predicate(collection[i])) {
+          return collection[i];
         }
       }
       return undefined;
