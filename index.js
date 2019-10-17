@@ -91,8 +91,14 @@ const fi = (function() {
       }
     },
 
-    compact: function(collection, predicate) {
-
+    compact: function(array) {
+      let compacted = [];
+      for (var i = 0; i < array.length; i++) {
+        if (array[i]) {
+          compacted.push(array[i]);
+        }
+      }
+      return compacted;
     },
 
     sortBy: function(collection, predicate) {
