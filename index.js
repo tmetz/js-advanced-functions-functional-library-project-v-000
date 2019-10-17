@@ -150,10 +150,10 @@ const fi = (function() {
         const uniqVals = new Set();
         for (let val of array) {
           const modVal = callback(val);
-          if (!modifiedVals.has(modVal) {
+          if (!modifiedVals.has(modVal)) {
             modifiedVals.add(modVal);
             uniqVals.add(val);
-          })
+          }
         }
         return Array.from(uniqVals);
       }
