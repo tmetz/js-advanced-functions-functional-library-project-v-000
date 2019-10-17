@@ -159,12 +159,20 @@ const fi = (function() {
       }
     },
 
-    keys: function(collection, predicate) {
-
+    keys: function(object) {
+      const keys = [];
+      for (let key in object) {
+        keys.push(key);
+      }
+      return keys;
     },
 
-    values: function(collection, predicate) {
-
+    values: function(object) {
+      const vals = [];
+      for (let key in object) {
+        vals.push(object[key]);
+      }
+      return vals;
     },
 
     functions: function(collection, predicate) {
