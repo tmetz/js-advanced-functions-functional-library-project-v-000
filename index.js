@@ -123,7 +123,7 @@ const fi = (function() {
       }
       else {
         for (let val of array) {
-          this.flatten(val, false, flat);
+          flat = this.flatten(val, false);
         }
       }
       return flat;
