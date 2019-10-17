@@ -109,8 +109,19 @@ const fi = (function() {
       return sorted;
     },
 
-    flatten: function(collection, predicate) {
-
+    flatten: function(array, shallow) {
+      let flat = [];
+      if (shallow) {
+        for (let val of array) {
+          Array.isArray(val) ? this.unpack(flat, val) : flat.push(val);
+        }
+      }
+      else {
+        for (let val of array) {
+          this.flatten(val, false, flat);
+        }
+      }
+      return flat;
     },
 
     uniq: function(collection, predicate) {
