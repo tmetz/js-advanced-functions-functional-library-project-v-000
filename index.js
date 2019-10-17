@@ -113,7 +113,7 @@ const fi = (function() {
       for (let val of arr)
         receiver.push(val)
     },
-    
+
     flatten: function(array, shallow) {
       let flat = [];
       if (shallow) {
