@@ -11,7 +11,7 @@ const fi = (function() {
       else {
         const newCollection = Object.values(collection);
       }
-      
+
       for (var i = 0; i < collection.length; i++) {
         callback(newCollection[i]);
       }
