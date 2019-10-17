@@ -23,7 +23,7 @@ const fi = (function() {
       const newCollection = [];
       if (!(collection instanceof Array))
         collection = Object.values(collection)
-      for (var i = 0; i < newCollection.length; i++) {
+      for (var i = 0; i < collection.length; i++) {
         newCollection.push(callback(collection[i]));
       }
       return newCollection;
