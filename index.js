@@ -82,8 +82,13 @@ const fi = (function() {
 
     },
 
-    last: function(collection, predicate) {
-
+    last: function(array, n) {
+      if (!n) {
+        return array[-1];
+      }
+      else {
+        return array.slice(-1, -1*n);
+      }
     },
 
     compact: function(collection, predicate) {
