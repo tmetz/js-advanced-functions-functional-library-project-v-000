@@ -29,11 +29,16 @@ const fi = (function() {
       return newCollection;
     },
 
-    reduce: function(collection, callback, acc=0) {
+    reduce: function(collection, callback, acc) {
+      let newCollection = collection.slice(0)
+      if (!acc) {
+        acc = newCollection[0];
+        newCollection = newCollection.slice(1);
+      }
       if (!(collection instanceof Array))
         collection = Object.values(collection)
-      for (var i = 0; i < collection.length; i++) {
-        acc += callback(collection[i]);
+      for (var i = 0; i < newCollection.length; i++) {
+        acc = callback(acc, newCollection[i], newCollection);
       }
       return acc;
     },
