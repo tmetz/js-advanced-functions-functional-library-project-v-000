@@ -5,11 +5,12 @@ const fi = (function() {
     },
 
     each: function(collection, callback) {
+      const newCollection;
       if (collection instanceof Array) {
-        const newCollection = collection.slice();
+        newCollection = collection.slice();
       }
       else {
-        const newCollection = Object.values(collection);
+        newCollection = Object.values(collection);
       }
 
       for (var i = 0; i < collection.length; i++) {
