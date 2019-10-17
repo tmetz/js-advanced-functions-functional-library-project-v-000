@@ -175,8 +175,14 @@ const fi = (function() {
       return vals;
     },
 
-    functions: function(collection, predicate) {
-
+    functions: function(object) {
+      let fns = [];
+      for (let key in object) {
+        if (typeof obj[key] === "function") {
+          gns.push(key);
+        }
+      }
+      return fns.sort();
     },
 
   }
