@@ -19,8 +19,12 @@ const fi = (function() {
       return collection;
     },
 
-    map: function() {
-
+    map: function(collection, callback) {
+      const newCollection = (collection instanceof Array) ? collection.slice() : Object.values(collection);
+      for (var i = 0; i < newCollection.length; i++) {
+        callback(newCollection[i]);
+      }
+      return newCollection;
     },
 
     reduce: function() {
