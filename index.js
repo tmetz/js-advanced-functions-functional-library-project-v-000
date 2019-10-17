@@ -178,8 +178,8 @@ const fi = (function() {
     functions: function(object) {
       let fns = [];
       for (let key in object) {
-        if (typeof obj[key] === "function") {
-          gns.push(key);
+        if (typeof object[key] === "function") {
+          fns.push(key);
         }
       }
       return fns.sort();
