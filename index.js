@@ -87,7 +87,7 @@ const fi = (function() {
         return array[array.length - 1];
       }
       else {
-        return array.slice(-1, -1*n);
+        return array.slice(array.length - n, array.length);
       }
     },
 
