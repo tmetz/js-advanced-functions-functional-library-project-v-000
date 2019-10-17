@@ -20,7 +20,9 @@ const fi = (function() {
     },
 
     map: function(collection, callback) {
-      const newCollection = (collection instanceof Array) ? collection.slice() : Object.values(collection);
+      const newCollection = [];
+      if (!(collection instanceof Array))
+        collection = Object.values(collection)
       for (var i = 0; i < newCollection.length; i++) {
         newCollection.push(callback(collection[i]));
       }
