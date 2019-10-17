@@ -54,6 +54,57 @@ const fi = (function() {
       return undefined;
     },
 
+    filter: function(collection, predicate) {
+      if (!(collection instanceof Array))
+        collection = Object.values(collection)
+      let passing = [];
+      for (var i = 0; i < collection.length; i++) {
+        if (predicate(collection[i])) {
+          passing.push(collection[i]);
+        }
+      }
+      return passing;
+    },
+
+    size: function(collection, predicate) {
+
+    },
+
+    first: function(collection, predicate) {
+
+    },
+
+    last: function(collection, predicate) {
+
+    },
+
+    compact: function(collection, predicate) {
+
+    },
+
+    sortBy: function(collection, predicate) {
+
+    },
+
+    flatten: function(collection, predicate) {
+
+    },
+
+    uniq: function(collection, predicate) {
+
+    },
+
+    keys: function(collection, predicate) {
+
+    },
+
+    values: function(collection, predicate) {
+
+    },
+
+    functions: function(collection, predicate) {
+
+    },
 
   }
 })()
