@@ -114,8 +114,7 @@ const fi = (function() {
         receiver.push(val)
     },
 
-    flatten: function(array, shallow) {
-      let flat = [];
+    flatten: function(array, shallow, flat = []) {
       if (!Array.isArray(array)) return flat.push(array);
       if (shallow) {
         for (let val of array) {
@@ -124,7 +123,7 @@ const fi = (function() {
       }
       else {
         for (let val of array) {
-          flat.push(this.flatten(val, false));
+          this.flatten(val, false, flat);
         }
       }
       return flat;
