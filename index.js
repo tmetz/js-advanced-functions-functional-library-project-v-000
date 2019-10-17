@@ -129,8 +129,34 @@ const fi = (function() {
       return flat;
     },
 
-    uniq: function(collection, predicate) {
+    uniqSorted: function(collection, iteratee) {
+      const sorted = [collection[0]]
+      for (let idx = 1; idx < collection.length; idx++) {
+        if (sorted[idx-1] !== collection[idx])
+          sorted.push(collection[idx])
+      }
+      return sorted
+    },
 
+    uniq: function(array, isSorted = false, callback=false) {
+      if (isSorted) {
+        return fi.uniqSorted(array, callback);
+      }
+      else if (!callback) {
+        return Array.from(new Set(array));
+      }
+      else {
+        const modifiedVals = new Set();
+        const uniqVals = new Set();
+        for (let val of array) {
+          const modVal = callback(val);
+          if (!modifiedVals.has(modVal) {
+            modifiedVals.add(modVal);
+            uniqVals.add(val);
+          })
+        }
+        return Array.from(uniqVals);
+      }
     },
 
     keys: function(collection, predicate) {
