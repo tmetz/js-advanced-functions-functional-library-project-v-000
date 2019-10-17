@@ -66,8 +66,10 @@ const fi = (function() {
       return passing;
     },
 
-    size: function(collection, predicate) {
-
+    size: function(collection) {
+      if (!(collection instanceof Array))
+        collection = Object.values(collection)
+      return collection.length;
     },
 
     first: function(collection, predicate) {
