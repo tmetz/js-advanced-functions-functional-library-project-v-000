@@ -43,8 +43,15 @@ const fi = (function() {
       return acc;
     },
 
-    functions: function() {
-
+    find: function(collection, predicate) {
+      if (!(collection instanceof Array))
+        collection = Object.values(collection)
+      for (var i = 0; i < collection.length; i++) {
+        if (collection[i] === predicate) {
+          return predicate;
+        }
+      }
+      return undefined;
     },
 
 
