@@ -109,6 +109,11 @@ const fi = (function() {
       return sorted;
     },
 
+    unpack: function(receiver, arr) {
+      for (let val of arr)
+        receiver.push(val)
+    },
+    
     flatten: function(array, shallow) {
       let flat = [];
       if (shallow) {
