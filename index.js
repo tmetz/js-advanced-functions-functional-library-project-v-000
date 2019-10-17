@@ -29,8 +29,13 @@ const fi = (function() {
       return newCollection;
     },
 
-    reduce: function() {
-
+    reduce: function(collection, callback, acc) {
+      if (!(collection instanceof Array))
+        collection = Object.values(collection)
+      for (var i = 0; i < collection.length; i++) {
+        acc += callback(collection[i]);
+      }
+      return acc;
     },
 
     functions: function() {
