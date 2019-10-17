@@ -116,6 +116,7 @@ const fi = (function() {
 
     flatten: function(array, shallow) {
       let flat = [];
+      if (!Array.isArray(array)) return flat.push(array);
       if (shallow) {
         for (let val of array) {
           Array.isArray(val) ? this.unpack(flat, val) : flat.push(val);
