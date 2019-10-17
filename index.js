@@ -5,15 +5,14 @@ const fi = (function() {
     },
 
     each: function(collection, callback) {
-      const newCollection;
       if (collection instanceof Array) {
-        newCollection = collection.slice();
+        const newCollection = collection.slice();
       }
       else {
-        newCollection = Object.values(collection);
+        const newCollection = Object.values(collection);
       }
 
-      for (var i = 0; i < collection.length; i++) {
+      for (var i = 0; i < newCollection.length; i++) {
         callback(newCollection[i]);
       }
       return collection;
