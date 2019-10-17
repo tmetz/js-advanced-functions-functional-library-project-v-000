@@ -101,8 +101,10 @@ const fi = (function() {
       return compacted;
     },
 
-    sortBy: function(collection, predicate) {
-
+    sortBy: function(array, callback) {
+      let sorted = array.slice();
+      sorted.sort(callback(a, b));
+      return sorted;
     },
 
     flatten: function(collection, predicate) {
